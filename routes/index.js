@@ -29,13 +29,7 @@ router.post('/speak', async function (req, res) {
       channel.publish(exchange, key, Buffer.from(msg));
 
       console.log(" [x] Sent %s", msg);
-      res.send()
     });
-
-    setTimeout(function() { 
-      connection.close(); 
-      process.exit(0); 
-    }, 500);
   });
 })
 
