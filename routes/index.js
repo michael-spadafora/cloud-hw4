@@ -29,7 +29,7 @@ router.post('/speak', async function (req, res) {
       channel.publish(exchange, key, Buffer.from(msg));
 
       console.log(" [x] Sent %s", msg);
-      res.send("sent " + msg)
+      res.send()
     });
 
     setTimeout(function() { 
@@ -72,7 +72,7 @@ router.post('/listen', async function (req, res) {
             channel.consume(q.queue, function(msg) {
                 if (msg.content) {
                     console.log(" [x] %s", msg.content.toString());
-                    res.send("recieved " + msg.content.toString())
+                    res.send({msg: msg.content.toString()})
                 }
             }, {
                 noAck: true
