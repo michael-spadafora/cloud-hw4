@@ -51,7 +51,7 @@ router.post('/listen', async function (req, res) {
         }
         var exchange = 'hw4';
 
-        channel.assertExchange(exchange, 'fanout', {
+        channel.assertExchange(exchange, 'direct', {
             durable: false
         });
 
