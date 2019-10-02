@@ -21,6 +21,7 @@ router.post('/speak', async function (req, res) {
       var exchange = 'hw4';
       var msg = message;
 
+
       channel.assertExchange(exchange, 'direct', {
         durable: false
       });
@@ -51,8 +52,7 @@ router.post('/listen', async function (req, res) {
         }
         var exchange = 'hw4';
 
-        channel.deleteExchange(exchange)
-        
+
         channel.assertExchange(exchange, 'direct', {
             durable: false
         });
