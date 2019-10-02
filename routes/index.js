@@ -29,9 +29,9 @@ router.post('/speak', async function (req, res) {
       channel.publish(exchange, key, Buffer.from(msg));
 
       console.log(" [x] Sent %s to " + key, msg);
-      res.send("")
     });
   });
+  res.send("")
 })
 
 router.post('/listen', async function (req, res) {
