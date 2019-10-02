@@ -66,7 +66,7 @@ router.post('/listen', async function (req, res) {
 
             channel.consume(q.queue, function(msg) {
                 if (msg.content) {
-                    console.log(" [x] %s", msg.content.toString());
+                    console.log(" recieved %s", msg.content.toString());
                     res.send({msg: msg.content.toString()})
                     connection.close()
                 }
