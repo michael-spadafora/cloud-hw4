@@ -68,6 +68,7 @@ router.post('/listen', async function (req, res) {
                 if (msg.content) {
                     console.log(" [x] %s", msg.content.toString());
                     res.send({msg: msg.content.toString()})
+                    connection.close()
                 }
             }, {
                 noAck: true
